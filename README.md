@@ -1,83 +1,96 @@
-# CONFIG-APE
+## CONFIGURADOR APE
 
-O CONFIG-APE é um aplicativo desenvolvido em Python com Streamlit para facilitar a análise e o cálculo da viabilidade econômica de sistemas FV no mercado livre de energia. Ele integra uma interface intuitiva com cálculos avançados realizados no backend, utilizando planilhas Excel e dados armazenados em bancos de dados SQLite. Além disso, integra a API do setor elétrico fornecida pela Way2 Technologies para obter as tarifas de energia.
+O Configurador APE é um aplicativo desenvolvido em Python com Streamlit para facilitar a análise e o cálculo da viabilidade econômica de sistemas FV no mercado livre de energia (ACL). Ele integra uma interface intuitiva com cálculos avançados realizados no backend, utilizando planilhas Excel e dados armazenados em bancos de dados SQLite. Além disso, integra a API do setor elétrico fornecida pela Way2 Technologies para obter as tarifas de energia.
 
-## Funcionalidades
-Importação de Dados: Integração com arquivos Excel para cálculos e geração de relatórios.
-Análises Personalizadas: Filtros por estado, cidade e modalidade tarifária.
-Conexão com APIs: Consulta automática de tarifas de energia com base nos parâmetros fornecidos.
-Banco de Dados: Gerenciamento eficiente de informações utilizando SQLite.
-Interface Gráfica: Exibição de tabelas e gráficos interativos com Streamlit.
+### Funcionalidades
+- Importação de Dados: Integração com arquivo Excel para cálculo econômico.
+- Análises Personalizadas: Filtros por estado, cidade e modalidade tarifária.
+- Conexão com API: Consulta automática de tarifas de energia com base nos parâmetros fornecidos.
+- Banco de Dados: Consulta de dados de irradiação em SQLite.
+- Interface Gráfica: Exibição de tabelas e gráficos com Streamlit.
 
-## Requisitos do Sistema
-Python 3.10 ou superior
-Bibliotecas (listadas em requirements.txt):
-pandas
-numpy
-streamlit
-requests
-openpyxl
-... (inclua todas as dependências necessárias)
+### Requisitos do Sistema
+- Python 3.12.3 ou superior
+- Bibliotecas:
+  - streamlit
+  - pandas
+  - openpyxl
+  - matplotlib
+  - millify
+  - keyboard
+  - xlwings
+  - sqlite3
+  - requests
 
-## Como Instalar e Executar o Projeto
+### Como Instalar e Executar o Projeto
 1. Clone o repositório
-bash
-Copiar código
-git clone https://github.com/solardev-cs/CONFIG-APE.git
-cd CONFIG-APE
+```
+  git clone https://github.com/solardev-cs/config-ape.git
+  cd config-ape
+```
 2. Crie um ambiente virtual e instale as dependências
-bash
-Copiar código
+```
 python -m venv .venv
 source .venv/bin/activate  # Linux/Mac
 .venv\Scripts\activate     # Windows
 pip install -r requirements.txt
+```
 3. Execute o aplicativo
-bash
-Copiar código
-streamlit run config_ui.py
-Estrutura do Projeto
-graphql
-Copiar código
+```
+streamlit run app.py
+```
 
-CONFIG-APE/
+Estrutura do Projeto
+```
+config-ape/
 │
-├── .venv/                  # Ambiente virtual (ignorar no Git)
-├── data/                   # Arquivos de dados e banco de dados
+├── .venv/                  # Ambiente virtual
+├── data/                   # Arquivos de dados
 │   ├── backend_ape.xlsx    # Planilha Excel usada para cálculos
 │   ├── dados_irrad.db      # Banco de dados SQLite com informações de irradiação
 │
-├── images/                 # Imagens usadas no projeto
+├── images/                 # Imagens
 │   ├── icone.png
 │   ├── logo.png
 │
-├── tarifas.py              # Módulo com funções para consulta de tarifas
-├── config_ui.py            # Arquivo principal (interface Streamlit)
+├── app.py                  # Arquivo principal (interface Streamlit)
+├── excel.py                # Módulo com funções para acesso de leitura e escrita no Excel
+├── irradiacao.py              # Módulo com funções para acesso ao banco de dados de irradiação
+├── tarifas.py              # Módulo com funções para consulta de tarifas via API
 ├── requirements.txt        # Arquivo de dependências
 └── README.md               # Documentação do projeto
+```
 
-## Como Usar
-Selecione o Estado e a Cidade:
-Use os seletores na interface para filtrar os dados de acordo com a localização desejada.
+### Como Usar
+Dados Iniciais:
+- Informe dados de localização, cliente e ano de análise.
 
-Configure os Parâmetros:
-Escolha o ano, modalidade tarifária, e subgrupo para gerar as tarifas personalizadas.
+Unidade Consumidora:
+- Informe os dados da distribuidora, UC e consumos mensais.
 
-Visualize os Resultados:
-O aplicativo exibe gráficos, tabelas interativas e métricas que facilitam a análise.
+Usina FV:
+- Informe a potência de inversor desejada para o projeto.
+  
+Contrato de Energia:
+- Informe as características do contrato ACL vigente.
 
-Exporte Relatórios:
-Baixe os resultados em formatos amigáveis (se essa funcionalidade for implementada).
+Viabilidade:
+- Informe os dados para simulação econômica.
 
-## Contribuindo
+Resumo:
+- Em implementação.
+
+
+### Contribuindo
 Contribuições são bem-vindas!
 
 Faça um fork do projeto.
 Crie uma branch para suas alterações: git checkout -b minha-feature.
 Envie um pull request com uma descrição detalhada das mudanças.
 
-## Contato
+### Contato
 Se tiver dúvidas ou sugestões, entre em contato:
 
 GitHub: solardev-cs
+
 E-mail: kikisauer@gmail.com
