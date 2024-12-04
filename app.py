@@ -11,7 +11,8 @@ import irradiacao as ir
 import excel as ex
 
 # PORTUGUÊS DO BRASIL
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+#locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+locale.setlocale(locale.LC_ALL, 'pt_BR')
 
 # CONFIGURAÇÃO DA PÁGINA
 st.set_page_config(
