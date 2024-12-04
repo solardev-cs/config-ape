@@ -10,6 +10,11 @@ import tarifas as tf
 import irradiacao as ir
 import excel as ex
 
+# AJUSTES FUTUROS PARA WEB APP FUNCIONAL
+# 1. Biblioteca xlwings não funciona na web sem Excel instalado no servidor - desenvolver cálculo fora do Excel, em dataframes
+# 2. Biblioteca keyboard (ambiente windows) para pressionar tecla não funciona na web - atualizar app programaticamente
+# 3. Servidor web precisa aceitar locale pt_BR - outras alternativas alterando software
+
 # PORTUGUÊS DO BRASIL
 try:
     locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
