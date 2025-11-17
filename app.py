@@ -314,7 +314,7 @@ with st.container():
                         with coluna1:    
                             st.markdown("##### Distribuidora")
                         with coluna2:
-                            print(tf.get_distrib())
+                            #st.write(tf.get_distrib())
                             #if distrib_list is None or len(distrib_list) == 0:
                             #    st.error("API não disponível.")
                             #    distrib_list = []  # passa lista vazia para evitar crash
