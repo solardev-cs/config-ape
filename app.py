@@ -314,11 +314,11 @@ with st.container():
                         with coluna1:    
                             st.markdown("##### Distribuidora")
                         with coluna2:
-                            distrib_list = tf.get_distrib()
-                            if distrib_list is None or len(distrib_list) == 0:
-                                st.error("API não disponível.")
-                                distrib_list = []  # passa lista vazia para evitar crash
-                            distrib = st.selectbox("Distribuidora", distrib_list, label_visibility="collapsed")
+                            print(tf.get_distrib())
+                            #if distrib_list is None or len(distrib_list) == 0:
+                            #    st.error("API não disponível.")
+                            #    distrib_list = []  # passa lista vazia para evitar crash
+                            distrib = st.selectbox("Distribuidora", [], label_visibility="collapsed")
                     with st.container():
                         coluna1, coluna2 = st.columns(2)
                         with coluna1:
